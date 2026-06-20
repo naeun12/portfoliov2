@@ -1,0 +1,295 @@
+/* ==========================================================================
+   Projects Section Base Styles
+   ========================================================================== */
+
+/* ================= TITLE ================= */
+
+.title.text-center {
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+    padding: 20px 0;
+}
+
+.title.text-center h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    background: linear-gradient(180deg,
+            var(--text-color-primary) 30%,
+            var(--text-color-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+.title.text-center h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+
+    background: var(--secondary-color);
+    border-radius: 99px;
+
+    box-shadow: 0 0 20px var(--card-glow);
+
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.title.text-center::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 80px;
+    background: radial-gradient(circle,
+            rgba(217, 119, 6, 0.15) 0%,
+            transparent 70%);
+    filter: blur(20px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.title.text-center:hover h1::after {
+    width: 150px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container-projects {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    font-family: var(--font-family);
+    color: var(--text-color-primary);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ================= GRID ================= */
+
+.card-container-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+/* ================= CARD ================= */
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5),
+        0 0 30px -5px var(--card-glow);
+}
+
+/* ================= IMAGE ================= */
+
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+    background-color: var(--primary-color);
+}
+
+.card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .card-img {
+    transform: scale(1.05);
+}
+
+/* ================= STATUS ================= */
+
+.status-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+
+    background-color: rgba(217, 119, 6, 0.2);
+    color: var(--secondary-color);
+    border: 1px solid rgba(217, 119, 6, 0.3);
+}
+
+/* ================= CARD BODY ================= */
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.project-category {
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-date {
+    color: var(--text-color-secondary);
+}
+
+/* ================= TEXT ================= */
+
+.card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.3;
+    color: var(--text-color-primary);
+}
+
+.card-text {
+    color: var(--text-color-secondary);
+    font-size: 0.925rem;
+    line-height: 1.6;
+    margin: 0 0 1.25rem 0;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ================= DETAILS ================= */
+
+.project-details {
+    border-top: 1px solid var(--card-border);
+    padding-top: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.detail-label {
+    color: var(--text-color-secondary);
+}
+
+.detail-value {
+    font-weight: 500;
+    color: var(--text-color-primary);
+}
+
+/* ================= TECH STACK ================= */
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: auto;
+}
+
+.tech-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 8px;
+
+    background-color: var(--primary-color);
+    color: var(--text-color-secondary);
+    border: 1px solid var(--card-border);
+}
+
+/* ================= ACTIONS ================= */
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 8px;
+}
+
+/* PRIMARY BUTTON */
+.btn-primary {
+    flex-grow: 1;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.75rem 1rem;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+}
+
+/* ICON BUTTON */
+.btn-icon {
+    background-color: var(--primary-color);
+    color: var(--text-color-primary);
+    border: 1px solid var(--card-border);
+    padding: 0.75rem;
+}
+
+.btn-icon:hover {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 480px) {
+    .card-container-projects {
+        grid-template-columns: 1fr;
+    }
+}

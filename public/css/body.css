@@ -1,0 +1,56 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary-color);
+        font-family: var(--font-family);
+}
+.section {
+   
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+html,
+body {
+    scroll-padding-top: 80px;
+}
+body {
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--card-border);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}

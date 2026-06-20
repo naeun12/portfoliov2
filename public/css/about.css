@@ -1,0 +1,199 @@
+.custom-about-section {
+    font-family: var(--font-family);
+    overflow: hidden;
+}
+
+.image-container-stack {
+    position: relative;
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-card {
+    position: absolute;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    box-shadow: var(--box-shadow);
+}
+
+.img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* LEFT CARD */
+.img-card-left {
+    width: 220px;
+    height: 220px;
+    bottom: 20px;
+    left: 20px;
+    transform: rotate(-4deg);
+
+    border: 1px solid var(--card-border);
+    z-index: 1;
+}
+
+/* RIGHT CARD */
+.img-card-right {
+    width: 220px;
+    height: 220px;
+    bottom: 0px;
+    right: 20px;
+    transform: rotate(6deg);
+
+    border: 1px solid var(--card-border);
+    z-index: 1;
+}
+
+/* MAIN IMAGE CARD */
+.img-card-main {
+    width: 260px;
+    height: 260px;
+    transform: translateY(-30px);
+
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    padding: 12px;
+    border: 1px solid var(--card-border);
+    z-index: 2;
+}
+
+.img-card-main .inner-wrap {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--primary-color);
+}
+
+/* HOVER EFFECT */
+.img-card:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 3;
+}
+
+/* ================= GLASS CARD ================= */
+
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid var(--card-border);
+    border-radius: 2rem;
+    box-shadow: var(--box-shadow);
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* TEXT GRADIENT */
+.section-subtitle {
+    color: var(--secondary-color);
+    /* Naggamit sa imong amber accent color */
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    font-family: var(--font-family);
+    position: relative;
+    padding-left: 12px;
+    display: inline-block;
+}
+
+/* Elegant vertical line selector sa kilid */
+.section-subtitle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 12px;
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+/* --- COMPREHENSIVE HERO HEADING --- */
+.hero-heading {
+    font-family: var(--font-family);
+    color: var(--text-color-primary);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    /* Modern tight-kerning font structure */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* --- LIGHT/DARK ADAPTIVE GRADIENT GLOW --- */
+.text-gradient {
+    background: linear-gradient(135deg,
+            var(--amber-400) 0%,
+            var(--secondary-color) 50%,
+            var(--blue-500) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    position: relative;
+    display: inline-block;
+    animation: textShine 6s ease infinite;
+}
+
+/* Subtle continuous shimmering effect for modern aesthetic */
+@keyframes textShine {
+    0% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
+    }
+
+    100% {
+        background-position: 0% center;
+    }
+}
+
+/* Interactivity element: mag-glow gamay kung i-hover ang heading */
+.hero-heading:hover .text-gradient {
+    text-shadow: 0 0 20px rgba(217, 119, 6, 0.25);
+}
+
+/* --- SMOOTH RESPONSIVE TYPOGRAPHY MEDIA QUERIES --- */
+@media (max-width: 768px) {
+    .hero-heading {
+        font-size: calc(1.4rem + 1.5vw);
+        /* Responsive display handling */
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+}
+.fullname {
+    background: linear-gradient(135deg, var(--text-color-primary) 0%, var(--text-color-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.fullname:hover {
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 15px rgba(248, 250, 252, 0.4);
+    /* Naggamit sa sanag sa --text-color-primary */
+    transform: translateY(-1px);
+}
+/* BADGE */
+.custom-badge {
+    background: var(--primary-color);
+    border: 1px solid var(--card-border);
+    color: var(--text-color-primary);
+
+    padding: 0.35rem 0.85rem;
+    border-radius: 50rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}

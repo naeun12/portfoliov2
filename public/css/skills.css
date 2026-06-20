@@ -1,0 +1,222 @@
+.skills-viewport {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.container-skills {
+    width: 100%;
+    height: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-family: var(--font-family);
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.skills-heading {
+    font-size: 2.75rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 0;
+    background: linear-gradient(135deg,
+            var(--text-color-primary) 30%,
+            var(--text-color-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Tabs */
+.tabs-container {
+    display: flex;
+    gap: 6px;
+    background: var(--primary-color);
+    padding: 6px;
+    border-radius: 14px;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--box-shadow);
+}
+
+.tab-link {
+    background: none;
+    border: none;
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.tab-link.inactive {
+    color: var(--text-color-secondary);
+}
+
+.tab-link.inactive:hover {
+    color: var(--text-color-primary);
+}
+
+.tab-link.active {
+    color: var(--secondary-color);
+    background: var(--primary-color);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--box-shadow);
+}
+
+/* Layout */
+.content-area {
+    display: flex;
+    gap: 24px;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 340px;
+    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+.category-btn {
+    background: var(--primary-color);
+    padding: 20px 24px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-color-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.category-btn:hover {
+    color: var(--text-color-primary);
+    background: var(--card-bg);
+}
+
+.category-btn.active-btn {
+    background: var(--card-bg);
+    color: var(--secondary-color);
+    border-color: var(--card-border);
+    box-shadow: var(--box-shadow);
+}
+
+.category-btn .arrow-icon {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: 0.25s;
+    color: var(--secondary-color);
+}
+
+.category-btn:hover .arrow-icon {
+    opacity: 0.6;
+    transform: translateX(0);
+}
+
+.category-btn.active-btn .arrow-icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Details Panel */
+.details-panel {
+    background: var(--card-bg);
+    backdrop-filter: blur(24px);
+    border: 1px solid var(--card-border);
+    flex-grow: 1;
+    border-radius: 24px;
+    padding: 48px;
+    box-shadow: var(--box-shadow);
+}
+
+.details-panel h3 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+    color: var(--text-color-primary);
+}
+
+.glow-line {
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+    box-shadow: 0 0 12px var(--card-glow);
+}
+
+.description {
+    color: var(--text-color-secondary);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 35px;
+}
+
+/* Skills */
+.skills-list {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.skill-badge {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-color-primary);
+    padding: 12px 20px;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    transition: 0.25s;
+}
+
+.skill-badge:hover {
+    background: var(--card-bg);
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Scrollbar hide */
+.scrollbar-hidden::-webkit-scrollbar {
+    width: 0;
+}
+
+.scrollbar-hidden {
+    scrollbar-width: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .skills-viewport {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .content-area {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .details-panel {
+        padding: 32px;
+    }
+}

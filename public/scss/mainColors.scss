@@ -1,0 +1,53 @@
+:root {
+    --primary-color: #0F172A;
+    --secondary-color: #D97706;
+    --text-color-primary: #F8FAFC;
+    --text-color-secondary: #94A3B8;
+    --font-family: 'Poppins', sans-serif;
+    --box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --card-border: rgba(255, 255, 255, 0.05);
+    --card-glow: rgba(217, 119, 6, 0.15);
+
+    /* Bag-ong mga Variables para sa Gradients ug Effects */
+    --amber-400: #fbbf24;
+    --amber-500: #f59e0b;
+    --blue-500: #3b82f6;
+
+    /* Social Media Colors */
+    --color-linkedin: #0a66c2;
+    --color-instagram: #e1306c;
+    --color-facebook: #1877f2;
+    --color-tiktok: #fe2c55;
+    --color-gmail: #ea4335;
+
+    /* UI Overlay/Border Colors */
+    --white-opacity-03: rgba(255, 255, 255, 0.03);
+    --white-opacity-05: rgba(255, 255, 255, 0.05);
+    --white-opacity-08: rgba(255, 255, 255, 0.08);
+    --white-opacity-10: rgba(255, 255, 255, 0.1);
+    --white-opacity-15: rgba(255, 255, 255, 0.15);
+    --white-opacity-30: rgba(255, 255, 255, 0.3);
+    --black-opacity-40: rgba(0, 0, 0, 0.4);
+}
+[data-theme="light"] {
+    --primary-color: #ffffff;
+    --secondary-color: #f59e0b;
+
+    --text-color-primary: #0f172a;
+    --text-color-secondary: #475569;
+
+    --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-border: rgba(15, 23, 42, 0.08);
+    --card-glow: rgba(245, 158, 11, 0.12);
+
+    --white-opacity-03: rgba(15, 23, 42, 0.03);
+    --white-opacity-05: rgba(15, 23, 42, 0.05);
+    --white-opacity-08: rgba(15, 23, 42, 0.08);
+    --white-opacity-10: rgba(15, 23, 42, 0.1);
+    --white-opacity-15: rgba(15, 23, 42, 0.15);
+    --white-opacity-30: rgba(15, 23, 42, 0.3);
+    --black-opacity-40: rgba(0, 0, 0, 0.08);
+}

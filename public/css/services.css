@@ -1,0 +1,177 @@
+/* ================= TITLE CONTAINER ================= */
+
+.title-container.text-center {
+    text-align: center;
+    position: relative;
+    padding: 24px 0;
+    margin-bottom: 40px;
+}
+
+.title-container.text-center h1 {
+    font-size: 3rem;
+    /* Medyo gi-scale down para sa mas elegante nga typography */
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    /* Modern tight kerning imbis nga wide uppercase spacing */
+    text-transform: none;
+    /* Sentence case/Title case mas sikat sa modern minimalist design */
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    color: var(--text-color-primary);
+}
+
+/* Modern Minimalist Animated Underline Line Indicator */
+.title-container.text-center h1::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0.6);
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color);
+    border-radius: 99px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Ambient Background Light Glow Effect */
+.title-container.text-center::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 120px;
+    background: radial-gradient(circle, var(--card-glow) 0%, transparent 70%);
+    filter: blur(40px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Hover Interactivity */
+.title-container.text-center:hover h1::after {
+    width: 100px;
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* ================= CARD CONTAINER ================= */
+
+.card-container {
+    padding: 100px 24px;
+    background-color: var(--primary-color);
+    font-family: var(--font-family);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    /* Auto-responsive grid alignment */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ================= THE MODERN GLASS CARD ================= */
+
+.modern-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    /* Mas lingin gamay para sa premium soft-ui aesthetic */
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modern-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(217, 119, 6, 0.3);
+    /* Subtle blend over hard secondary color */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* ================= IMAGE & MEDIA WRAPPER ================= */
+
+.card-img-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 60%;
+    /* Mas limpyo nga cinematic aspect ratio */
+    overflow: hidden;
+    background-color: var(--white-opacity-03);
+}
+
+/* Subtle modern mesh overlay framework imbis nga itom kaayo nga gradient */
+.card-img-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,
+            rgba(15, 23, 42, 0.4) 0%,
+            transparent 50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.resizable-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(15%) contrast(102%);
+    /* Cinematic card vibe */
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modern-card:hover .resizable-img {
+    transform: scale(1.03) rotate(0.5deg);
+    /* Dynamic subtle fluid rotation */
+    filter: grayscale(0%) contrast(100%);
+}
+
+/* ================= CONTENT TYPOGRAPHY ================= */
+
+.card-content {
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+    gap: 12px;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color-primary);
+    letter-spacing: -0.015em;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.modern-card:hover .card-title {
+    color: var(--amber-400);
+    /* Consistent structural highlight pointer */
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: var(--text-color-secondary);
+    line-height: 1.65;
+    margin: 0;
+    font-weight: 400;
+}
