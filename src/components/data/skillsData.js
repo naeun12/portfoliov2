@@ -6,14 +6,21 @@ export default {
       1,
       "Frontend Development",
       "Building responsive and interactive user interfaces.",
-      ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Responsive Web Design"],
+      [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Vue.js",
+        "Bootstrap",
+        "Responsive Web Design",
+      ],
     ),
 
     new skillsModel(
       2,
       "Backend Development",
       "Developing server-side applications and APIs.",
-      ["PHP", "Laravel", "RESTful APIs"],
+      ["PHP", "Laravel", "RESTful APIs", "ASP.NET"],
     ),
 
     new skillsModel(

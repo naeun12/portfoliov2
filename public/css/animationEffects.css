@@ -1,0 +1,137 @@
+/* --- ENTRANCE OVERLAY STYLE --- */
+.portfolio-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+
+    /* Gigamit ang --primary-color variable para automatic mo-adjust sa Light/Dark theme */
+    background: var(--primary-color);
+    opacity: 0.98;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition:
+        opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Inig trigger sa hide-overlay, mo-scale up ug mo-fade out siya */
+.portfolio-container.hide-overlay {
+    opacity: 0;
+    transform: scale(1.05);
+    pointer-events: none;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    text-align: center;
+}
+
+/* --- ANIMATION FOR IMAGE & TEXT --- */
+.profile-image-wrapper {
+    padding: 12px;
+    border-radius: 50%;
+
+    /* Gigamit ang imong opacity variables alang sa borders ug background */
+    background: linear-gradient(135deg,
+            var(--white-opacity-15),
+            var(--white-opacity-03));
+    border: 1px solid var(--white-opacity-15);
+    box-shadow: var(--box-shadow);
+
+    /* Entrance animation sa Image */
+    animation: revealImage 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-family: var(--font-family);
+
+    /* Gigamit ang secondary amber color/text color para sa nindot nga gradient effect matag theme */
+    background: linear-gradient(135deg, var(--text-color-primary) 40%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Entrance animation sa Text nga may gamayng delay */
+    animation: revealText 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+    opacity: 0;
+}
+
+/* --- MAIN CONTENT TRANSITION --- */
+.main-content-wrapper {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.main-content-ready {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- KEYFRAMES --- */
+@keyframes revealImage {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+        filter: blur(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes revealText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* --- COLLAPSE EFFECTS --- */
+.entrance-wrapper {
+    opacity: 1;
+    max-height: 100vh;
+    transition:
+        opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        max-height 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, max-height;
+}
+
+/* Inig abot sa gitakdang segundo, mo-fade out ug mo-shrink kini */
+.collapse-away {
+    opacity: 0;
+    max-height: 0px !important;
+    pointer-events: none;
+}

@@ -4,7 +4,7 @@
   <div class="container-home">
     <div class="profile-image">
       <div class="image-wrapper">
-        <img src="../../public/images/lance.png" alt="Lance Monsanto" />
+        <img src="/images/lance.png" alt="Lance Monsanto" />
       </div>
     </div>
 

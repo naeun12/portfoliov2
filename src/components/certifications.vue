@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       certificationsData: certificationsData,
-      imageSource: "../../public/images/certifications/",
+      imageSource: "/images/certifications/",
     };
   },
 };

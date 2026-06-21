@@ -11,21 +11,17 @@
         <div class="col-12 col-lg-5">
           <div class="image-container-stack">
             <div class="img-card img-card-left">
-              <img
-                src="../../public/images/aboutme/completion.jpg"
-                alt="Tech Stack" />
+              <img src="/images/aboutme/completion.jpg" alt="Tech Stack" />
             </div>
 
             <div class="img-card img-card-right">
-              <img
-                src="../../public/images/aboutme/presentation.jpg"
-                alt="Workspace" />
+              <img src="/images/aboutme/presentation.jpg" alt="Workspace" />
             </div>
 
             <div class="img-card img-card-main">
               <div class="inner-wrap">
                 <img
-                  src="../../public/images/aboutme/gradpic.jpg"
+                  src="/images/aboutme/gradpic.jpg"
                   alt="Lance Monsanto"
                   class="object-fit-cover" />
               </div>

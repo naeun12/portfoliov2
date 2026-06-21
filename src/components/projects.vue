@@ -97,7 +97,7 @@ import projectsData from "./data/projectsData";
 export default {
   data() {
     return {
-      imageSource: "../../public/images/",
+      imageSource: "/images/",
       datas: projectsData.Projects,
     };
   },

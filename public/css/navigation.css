@@ -142,3 +142,106 @@
 
     /* Mahimo nimo usbon ang template content gamit ang CSS class sa mobile kung gusto nimo icon ra */
 }
+/* --- HAMBURGER BUTTON STYLES --- */
+.menu-toggle-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+}
+
+.hamburger-bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color-primary);
+    border-radius: 9px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Transform Hamburger into an 'X' close icon when open */
+.menu-toggle-btn.is-active .hamburger-bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle-btn.is-active .hamburger-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle-btn.is-active .hamburger-bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* --- RESPONSIVE DRAWER & BREAKPOINTS --- */
+
+@media (max-width: 991.98px) {
+    .container-navigation {
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* Transform menu container into a fullscreen mobile overlay drawer */
+    .links-items {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Keeps it off-screen by default */
+        width: 280px;
+        /* Clean, compact panel width */
+        height: 100vh;
+        background: var(--card-bg);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border-left: 1px solid var(--card-border);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 80px 24px 40px 24px;
+        gap: 2.5rem;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Sliding transition execution */
+    .links-items.mobile-open {
+        right: 0;
+    }
+
+    .nav-links-list {
+        width: 100%;
+        align-items: center;
+        gap: 1.75rem !important;
+    }
+
+    .nav-item-link {
+        font-size: 1.1rem;
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .theme-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-navigation {
+        padding: 0.75rem 1rem;
+    }
+
+    .navbar-brand-custom {
+        font-size: 1.3rem;
+    }
+
+    .links-items {
+        width: 100%;
+        /* Occupy full screen on tiny devices */
+    }
+}

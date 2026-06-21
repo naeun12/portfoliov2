@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       services: servicesData.Services,
-      imageSource: "../../public/images/",
+      imageSource: "/images/",
     };
   },
 };

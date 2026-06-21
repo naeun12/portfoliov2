@@ -29,25 +29,34 @@
     --white-opacity-15: rgba(255, 255, 255, 0.15);
     --white-opacity-30: rgba(255, 255, 255, 0.3);
     --black-opacity-40: rgba(0, 0, 0, 0.4);
-}
-[data-theme="light"] {
-    --primary-color: #ffffff;
-    --secondary-color: #f59e0b;
+}[data-theme="light"] {
+    /* --- BACKGROUNDS (Dili sakit sa mata, dili super white) --- */
+    --primary-color: #F8FAFC;
+    /* Gihimong soft slate-white (off-white) imbis #ffffff */
+    --secondary-color: #D97706;
+    /* Darker amber (Amber-600) para klaro basahon sa light mode */
 
-    --text-color-primary: #0f172a;
-    --text-color-secondary: #475569;
+    /* --- TEXT COLORS (Premium contrast, balanced) --- */
+    --text-color-primary: #1E293B;
+    /* Slate-800 imbis itom kaayo, mas soft sa mata */
+    --text-color-secondary: #64748B;
+    /* Muted slate-500 para sa sekundaryang detalye */
 
-    --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    /* --- SHADOWS & GLOWS (Humok ug natural) --- */
+    --box-shadow: 0 16px 32px -4px rgba(15, 23, 42, 0.04), 0 4px 12px -2px rgba(15, 23, 42, 0.02);
+    --card-bg: rgba(255, 255, 255, 0.75);
+    /* Elegant glassmorphic puti nga translucent */
+    --card-border: rgba(15, 23, 42, 0.05);
+    /* Nipis kaayo nga border line */
+    --card-glow: rgba(217, 119, 6, 0.06);
+    /* Humok nga amber glow para dili mapatyan ang mata */
 
-    --card-bg: rgba(255, 255, 255, 0.9);
-    --card-border: rgba(15, 23, 42, 0.08);
-    --card-glow: rgba(245, 158, 11, 0.12);
-
-    --white-opacity-03: rgba(15, 23, 42, 0.03);
-    --white-opacity-05: rgba(15, 23, 42, 0.05);
-    --white-opacity-08: rgba(15, 23, 42, 0.08);
-    --white-opacity-10: rgba(15, 23, 42, 0.1);
-    --white-opacity-15: rgba(15, 23, 42, 0.15);
-    --white-opacity-30: rgba(15, 23, 42, 0.3);
-    --black-opacity-40: rgba(0, 0, 0, 0.08);
+    /* --- UI OPACITY OVERLAYS (Gi-convert sa Slate/Dark tones para sa Light Mode) --- */
+    --white-opacity-03: rgba(15, 23, 42, 0.02);
+    --white-opacity-05: rgba(15, 23, 42, 0.04);
+    --white-opacity-08: rgba(15, 23, 42, 0.06);
+    --white-opacity-10: rgba(15, 23, 42, 0.08);
+    --white-opacity-15: rgba(15, 23, 42, 0.12);
+    --white-opacity-30: rgba(15, 23, 42, 0.25);
+    --black-opacity-40: rgba(15, 23, 42, 0.05);
 }

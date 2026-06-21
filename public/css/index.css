@@ -1,0 +1,177 @@
+/* --- MAIN CONTENT TRANSITION & BORDER GLOW --- */
+.main-content-wrapper {
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    /* Giapil ang border-top/box-shadow sa transition */
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 1.2s ease 0.5s,
+        border-color 1.2s ease 0.5s;
+
+    /* Inisyal nga border (transparent sa sugod) */
+    border-top: 2px solid transparent;
+    padding-top: 20px;
+    /* Gamay nga spacing gikan sa border */
+}
+
+/* Inig trigger nga ready na ang page (mana ang entrance animation) */
+.main-content-ready {
+    opacity: 1;
+    transform: translateY(0);
+
+    /* Mo-glow ug mosiga ang border isip indicator nga andam na ang page */
+    border-top: 2px solid var(--secondary-color);
+    box-shadow: 0 -15px 30px -10px var(--card-glow);
+}
+
+/* --- OPTIONAL: DUGANG LINE EXPANSION EFFECT --- */
+/* Kung gusto nimo og border nga gikan sa tunga padulong sa kilid (expanding line) */
+.main-content-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    /* Itapat sa ibabaw sa border */
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--amber-400), transparent);
+    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.6s, left 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.6s;
+}
+
+.main-content-ready::before {
+    width: 100%;
+    left: 0;
+}
+/* --- MODERN SIDE INDICATOR --- */
+.section-indicator {
+    position: fixed;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 9000;
+    pointer-events: none;
+    font-family: var(--font-family);
+
+    /* Entrance Fade-in human sa intro screen */
+    animation: fadeInIndicator 0.8s ease forwards;
+}
+
+/* Vertical Progress Bar Container */
+.indicator-track {
+    position: relative;
+    width: 3px;
+    height: 180px;
+    background: var(--white-opacity-08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Dynamic Active Progress Glow Line */
+.indicator-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom,
+            var(--secondary-color),
+            var(--blue-500));
+    box-shadow: 0 0 10px var(--secondary-color);
+    transition: height 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Content Layout Wrapper */
+.indicator-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background: var(--card-bg);
+    padding: 20px 12px;
+    border-radius: 30px;
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--box-shadow);
+}
+
+/* Modern Large Page Number */
+.section-number {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--text-color-primary);
+    letter-spacing: -1px;
+    transition: all 0.4s ease;
+    background: linear-gradient(135deg,
+            var(--text-color-primary) 30%,
+            var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Gamay nga accent horizontal divider split */
+.indicator-line-short {
+    width: 15px;
+    height: 2px;
+    background: var(--secondary-color);
+    opacity: 0.7;
+}
+
+/* Classy Vertical Text */
+.section-name {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--text-color-secondary);
+    text-transform: uppercase;
+    transition: color 0.4s ease;
+}
+
+/* Keyframe for subtle appearance */
+@keyframes fadeInIndicator {
+    0% {
+        opacity: 0;
+        transform: translateY(-40%) scale(0.95);
+        filter: blur(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* --- RESPONSIVE MOBILE FIXES --- */
+@media (max-width: 768px) {
+    .section-indicator {
+        right: 15px;
+        gap: 10px;
+    }
+
+    .indicator-track {
+        display: none;
+        /* Tangtangon ang track sa mobile para dili huot */
+    }
+
+    .indicator-content {
+        padding: 14px 8px;
+        background: rgba(15, 23, 42, 0.6);
+        /* Transparent dark pill effect */
+    }
+
+    .section-number {
+        font-size: 1.3rem;
+    }
+
+    .section-name {
+        font-size: 0.65rem;
+        letter-spacing: 3px;
+    }
+}
