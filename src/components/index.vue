@@ -137,5 +137,5 @@ export default {
 };
 </script>
 
-<style src="../../public/css/animationEffects.css"></style>
-<style src="../../public/css/index.css"></style>
+<style src="../components/assets/css/animationEffects.css"></style>
+<style src="../components/assets/css/index.css"></style>

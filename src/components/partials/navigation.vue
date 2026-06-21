@@ -111,4 +111,4 @@ export default {
   },
 };
 </script>
-<style scoped src="../../../public/css/navigation.css"></style>
+<style scoped src="../assets/css/navigation.css"></style>

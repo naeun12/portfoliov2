@@ -103,4 +103,4 @@ export default {
   },
 };
 </script>
-<style src="../../public/css/projects.css"></style>
+<style src="../components/assets/css/projects.css"></style>

@@ -14,4 +14,4 @@ export default {
   },
 };
 </script>
-<style src="../public/css/body.css"></style>
+<style src="../src/components/assets/css/body.css"></style>

@@ -101,4 +101,4 @@ export default {
 };
 </script>
 
-<style src="../../public/css/skills.css"></style>
+<style src="../components/assets/css//skills.css"></style>

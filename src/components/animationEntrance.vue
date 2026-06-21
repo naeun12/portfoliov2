@@ -19,4 +19,4 @@ onMounted(() => {
 });
 </script>
 
-<style src="../../public/css/animationEffects.css"></style>
+<style src="../components/assets/css/animationEffects.css"></style>

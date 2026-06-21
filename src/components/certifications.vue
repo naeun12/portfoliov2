@@ -45,4 +45,4 @@ export default {
 };
 </script>
 
-<style src="../../public/css/certifications.css"></style>
+<style src="../components/assets/css/certifications.css"></style>

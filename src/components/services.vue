@@ -39,4 +39,4 @@ export default {
   },
 };
 </script>
-<style src="../../public/css/services.css"></style>
+<style src="../components/assets/css/services.css"></style>

@@ -78,4 +78,4 @@
     </div>
   </section>
 </template>
-<style src="../../public/css/about.css"></style>
+<style src="../components/assets/css/about.css"></style>

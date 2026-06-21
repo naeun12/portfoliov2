@@ -166,4 +166,4 @@ export default {
 };
 </script>
 
-<style src="../../public/css/home.css"></style>
+<style src="../components/assets/css/home.css"></style>

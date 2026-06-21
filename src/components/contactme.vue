@@ -226,4 +226,4 @@ const handleSubmit = async () => {
 };
 </script>
 
-<style scoped src="../../public/css/contactme.css"></style>
+<style scoped src="../components/assets/css/contactme.css"></style>
