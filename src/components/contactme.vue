@@ -152,31 +152,21 @@
 <script setup>
 import { ref } from "vue";
 import emailjs from "@emailjs/browser";
-
 const form = ref({
   name: "",
   email: "",
   subject: "",
   message: "",
 });
-
 const isSubmitting = ref(false);
-
 const alert = ref({
   show: false,
   type: "success",
   message: "",
 });
-
-// 🔥 VALIDATION + SEND EMAIL FUNCTION
 const handleSubmit = async () => {
-  // prevent multiple clicks
   if (isSubmitting.value) return;
-
-  // hide previous alert
   alert.value.show = false;
-
-  // 🔥 check empty fields (IMPORTANT for 422 error fix)
   if (
     !form.value.name ||
     !form.value.email ||
@@ -195,26 +185,23 @@ const handleSubmit = async () => {
 
   try {
     const response = await emailjs.send(
-      "service_8kmtbkr", // Service ID
-      "template_mplv6df", // Template ID
+      "service_8kmtbkr",
+      "template_mplv6df",
       {
         from_name: form.value.name,
         from_email: form.value.email,
         subject: form.value.subject,
         message: form.value.message,
+        to_email: "niinaeun@gmail.com",
       },
-      "34p6kJp1Tu3i9ioCT", // Public Key
+      "34p6kJp1Tu3i9ioCT",
     );
-
     console.log("SUCCESS!", response.status, response.text);
-
     alert.value = {
       show: true,
       type: "success",
       message: `Message sent successfully. Thank you, ${form.value.name}!`,
     };
-
-    // reset form
     form.value = {
       name: "",
       email: "",
@@ -223,7 +210,6 @@ const handleSubmit = async () => {
     };
   } catch (error) {
     console.log("EMAILJS ERROR:", error);
-
     alert.value = {
       show: true,
       type: "error",

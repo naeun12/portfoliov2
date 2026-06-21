@@ -33,7 +33,9 @@
     <div
       :class="{ 'main-content-ready': startFadeOut }"
       class="main-content-wrapper">
-      <div id="home" class="home-container section"><Home /></div>
+      <div id="home" class="home-container section">
+        <Home :scrollToSection="scrollToSection" />
+      </div>
       <div id="about" class="aboutme-container section"><AboutMe /></div>
       <div id="services" class="services-container section"><Services /></div>
       <div id="skills" class="skills-container section"><Skills /></div>

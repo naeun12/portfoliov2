@@ -112,7 +112,7 @@
         </a>
       </div>
       <div class="buttons">
-        <a href="mailto:imonggmail@gmail.com" class="btn btn-contact"
+        <a @click.prevent="scrollToSection('contacts')" class="btn btn-contact"
           >Contact Me</a
         >
         <!-- @format -->
@@ -155,6 +155,9 @@
 
 <script>
 export default {
+  props: {
+    scrollToSection: Function,
+  },
   methods: {
     viewResume() {
       window.open("/files/resume/Lancemonsanto.pdf", "_blank");
